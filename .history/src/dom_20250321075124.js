@@ -8,7 +8,7 @@ const renderProjects = () => {
     projects.forEach((project, index) => {
         const projectItem = document.createElement('li');
         projectItem.textContent = project.name;
-        projectItem.addEventListener('click', () => renderTodos(index));
+        projectItem.addEventListener('click', () renderTodos(index));
         projectList.appendChild(projectItem);
     });
 };
