@@ -89,9 +89,7 @@ h1, h2, h3 {
 }
 
 .btn-cancel,
-.btn-submit,
-.edit-todo-btn,
-.delete-todo-btn {
+.btn-submit {
   background-color: #e9e9e9be; /* Light gray background */
   padding: 8px 15px;
   border: none;
@@ -102,12 +100,9 @@ h1, h2, h3 {
 }
 
 .btn-cancel:hover,
-.btn-submit:hover,
-.edit-todo-btn:hover,
-.delete-todo-btn:hover {
-  background-color: #c9c9c979; /* Darker gray on hover */
+.btn-submit:hover {
+  background-color: #c9c9c979;
 }
-
 
 .todo-item {
   background-color: white;
@@ -187,9 +182,9 @@ h1, h2, h3 {
 }
 
 /* Hide elements with .hidden class */
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
 /* Flex row for due date and priority */
 .form-row {
