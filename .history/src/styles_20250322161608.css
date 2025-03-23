@@ -1,0 +1,221 @@
+/* Add these styles to your existing style.css */
+
+/* Improved Base Styles */
+body {
+  line-height: 1.6;
+}
+
+.container {
+  gap: 20px;
+}
+
+/* Enhanced Sidebar Styling */
+.sidebar {
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  padding: 25px 15px;
+}
+
+.projects-list li {
+  padding: 12px 15px;
+  margin: 5px 0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.projects-list li.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.projects-list li.active .todo-count {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.projects-list li:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+/* Improved Todo Items */
+.todo-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  padding: 18px;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.todo-item:hover {
+  transform: translateX(5px);
+}
+
+.todo-item.priority-high { border-color: #e74c3c; }
+.todo-item.priority-medium { border-color: #f1c40f; }
+.todo-item.priority-low { border-color: #2ecc71; }
+
+.todo-checkbox {
+  margin-top: 3px;
+}
+
+.todo-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+}
+
+.todo-content {
+  flex-grow: 1;
+}
+
+.todo-title {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.todo-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.todo-item:hover .todo-actions {
+  opacity: 1;
+}
+
+/* Enhanced Form Styling */
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 15px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Improved Todo Details Modal */
+.todo-details {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.details-content {
+  width: 90%;
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.details-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Checklist Improvements */
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.checklist-item label {
+  flex-grow: 1;
+}
+
+.delete-checklist-item {
+  color: #e74c3c;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.delete-checklist-item:hover {
+  background-color: #fee;
+}
+
+/* Empty State Styling */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.empty-state i {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  opacity: 0.6;
+}
+
+/* Button Enhancements */
+.btn-submit {
+  background-color: var(--secondary-color) !important;
+  color: white !important;
+}
+
+.btn-submit:hover {
+  background-color: #27ae60 !important;
+}
+
+.delete-project-btn {
+  background: none !important;
+  color: #e74c3c !important;
+  padding: 2px 6px !important;
+  border-radius: 50%;
+}
+
+.delete-project-btn:hover {
+  background-color: #fee !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .todo-item {
+    padding: 15px;
+  }
+
+  .todo-actions {
+    opacity: 1;
+  }
+}

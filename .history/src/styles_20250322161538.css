@@ -1,0 +1,387 @@
+css
+
+Collapse
+
+Wrap
+
+Copy
+/* Define CSS variables for consistent theming */
+:root {
+  --primary-color: #3498db; /* Blue for primary actions */
+  --secondary-color: #2ecc71; /* Green for submit actions */
+  --background-color: #f4f4f4; /* Light gray background */
+  --text-color: #333; /* Dark text */
+  --sidebar-bg: #ecf0f1; /* Slightly darker gray for sidebar */
+}
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Typography */
+h1, h2, h3 {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+/* Sidebar - Projects */
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.projects-list li {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.projects-list li:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.projects-list li.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.projects-list li.active:hover {
+  background-color: #2980b9; /* Darker blue */
+}
+
+.delete-project-btn {
+  background-color: #e74c3c; /* Red */
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-project-btn:hover {
+  background-color: #c0392b; /* Darker red */
+}
+
+/* Todo Items */
+.todo-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  transition: box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.todo-checkbox {
+  margin-right: 15px;
+}
+
+.todo-content {
+  flex: 1;
+}
+
+.todo-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.todo-date {
+  color: #777;
+  font-size: 0.9em;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-item.completed .todo-title {
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* Priority Indicators */
+.priority-high {
+  border-left: 5px solid #e74c3c; /* Red */
+}
+
+.priority-medium {
+  border-left: 5px solid #f39c12; /* Orange */
+}
+
+.priority-low {
+  border-left: 5px solid #2ecc71; /* Green */
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Forms */
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Buttons */
+.add-btn,
+.btn-cancel,
+.btn-submit,
+.edit-todo-btn,
+.delete-todo-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #2980b9; /* Darker blue */
+}
+
+.btn-cancel,
+.edit-todo-btn,
+.delete-todo-btn {
+  background-color: #e9e9e9be;
+}
+
+.btn-cancel:hover,
+.edit-todo-btn:hover,
+.delete-todo-btn:hover {
+  background-color: #c9c9c979;
+}
+
+.btn-submit {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-submit:hover {
+  background-color: #27ae60; /* Darker green */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Modal */
+.todo-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.todo-details:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.details-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.todo-details:not(.hidden) .details-content {
+  transform: scale(1);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.details-header {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Checklist */
+.checklist-items {
+  margin-bottom: 15px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.delete-checklist-item {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.add-checklist-item {
+  display: flex;
+  gap: 10px;
+}
+
+.add-checklist-item input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Headers */
+.section-header,
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Hidden Elements */
+.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}

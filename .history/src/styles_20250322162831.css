@@ -82,30 +82,14 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/*   ffdfdf*/
 
 
-.project-name {
-  flex-grow: 1;
-}
 
-.project-separator {
-  margin: 0 8px;
-}
-
-.todo-count {
-  width: 40px;
-  text-align: right;
-  margin-right: 8px;
-}
-
-.delete-project-btn, .placeholder-btn {
-  width: 20px;
-  text-align: center;
-}
-
+/*temp change*/
 
 .project-item {
-    padding: 8px 12px;
+  padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
   border-radius: var(--border-radius);
   cursor: pointer;

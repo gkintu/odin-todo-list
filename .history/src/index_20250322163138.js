@@ -32,27 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-  // Mobile sidebar toggle
-  const toggleSidebarBtn = document.createElement('button');
-  toggleSidebarBtn.className = 'toggle-sidebar';
-  toggleSidebarBtn.innerHTML = '<i class="fas fa-bars"></i>';
-  document.body.appendChild(toggleSidebarBtn);
-  
-  toggleSidebarBtn.addEventListener('click', () => {
-    document.querySelector('.sidebar').classList.toggle('active');
-  });
-  
-  // Close sidebar when clicking outside on mobile
-  document.addEventListener('click', (e) => {
-    const sidebar = document.querySelector('.sidebar');
-    if (window.innerWidth <= 768 && 
-        sidebar.classList.contains('active') && 
-        !sidebar.contains(e.target) && 
-        !toggleSidebarBtn.contains(e.target)) {
-      sidebar.classList.remove('active');
-    }
-  });
-
 // For debugging in development
 if (process.env.NODE_ENV !== 'production') {
   window.TodoManager = TodoManager; // Make TodoManager accessible from console

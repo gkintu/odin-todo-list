@@ -65,7 +65,6 @@ const DomManager = (() => {
       if (title.trim() !== '' && dueDate) {
         TodoManager.addTodo(title, description, dueDate, priority, projectId, notes);
         renderTodos(projectId);
-        renderProjects(); // Added this line to update project counts
         dom.addTodoForm.reset();
         
         // Hide the form
@@ -111,11 +110,9 @@ const DomManager = (() => {
       projectItem.dataset.projectId = project.id;
       
       projectItem.innerHTML = `
-      <div class="project-name">${project.name}</div>
-      <div class="project-separator">-</div>
-      <div class="todo-count">(${project.todos.length})</div>
-      ${project.id !== projects[0].id ? '<button class="delete-project-btn">×</button>' : '<div class="placeholder-btn"></div>'}
-    `;
+        <span>${project.name}</span> - <span class="todo-count">(${project.todos.length})</span>
+        ${project.id !== projects[0].id ? '<button class="delete-project-btn">×</button>' : ''}
+      `;
       
       projectItem.addEventListener('click', (e) => {
         if (e.target.classList.contains('delete-project-btn')) {
@@ -225,7 +222,6 @@ const DomManager = (() => {
       checkbox.addEventListener('change', () => {
         TodoManager.toggleTodoComplete(todo.id, project.id);
         todoItem.classList.toggle('completed');
-        renderProjects(); // Added this line to update project counts
       });
       
       const editBtn = todoItem.querySelector('.edit-todo-btn');
@@ -238,7 +234,6 @@ const DomManager = (() => {
         if (confirm('Delete this todo?')) {
           TodoManager.deleteTodo(todo.id, project.id);
           renderTodos(project.id);
-          renderProjects(); // Added this line to update project counts
         }
       });
       
@@ -314,7 +309,6 @@ const DomManager = (() => {
       
       TodoManager.updateTodo(todo.id, project.id, updates);
       renderTodos(project.id);
-      renderProjects(); // Added this line to update project counts
       
       // Hide details panel
       dom.todoDetails.classList.add('hidden');

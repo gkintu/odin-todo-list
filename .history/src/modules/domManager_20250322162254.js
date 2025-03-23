@@ -111,11 +111,9 @@ const DomManager = (() => {
       projectItem.dataset.projectId = project.id;
       
       projectItem.innerHTML = `
-      <div class="project-name">${project.name}</div>
-      <div class="project-separator">-</div>
-      <div class="todo-count">(${project.todos.length})</div>
-      ${project.id !== projects[0].id ? '<button class="delete-project-btn">×</button>' : '<div class="placeholder-btn"></div>'}
-    `;
+        <span>${project.name}</span> - <span class="todo-count">(${project.todos.length})</span>
+        ${project.id !== projects[0].id ? '<button class="delete-project-btn">×</button>' : ''}
+      `;
       
       projectItem.addEventListener('click', (e) => {
         if (e.target.classList.contains('delete-project-btn')) {

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>Todo List</h1>
+      </div>
+      
+      <div class="projects-section">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <button id="show-add-project" class="add-btn">+</button>
+        </div>
+        
+        <ul id="projects-list" class="projects-list"></ul>
+        
+        <div id="add-project-container" class="form-container hidden">
+          <form id="add-project-form">
+            <h3>Add New Project</h3>
+            <div class="form-group">
+              <label for="project-name">Name</label>
+              <input type="text" id="project-name" required>
+            </div>
+            <div class="form-group">
+              <label for="project-description">Description</label>
+              <textarea id="project-description"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" id="cancel-add-project" class="btn-cancel">Cancel</button>
+              <button type="submit" class="btn-submit">Add Project</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </aside>
+    
+    <main id="main-content" class="main-content">
+      <div class="content-header">
+        <h2 id="current-project-title">Default</h2>
+        <button id="show-add-todo" class="add-btn">+</button>
+      </div>
+      
+      <div id="add-todo-container" class="form-container hidden">
+        <form id="add-todo-form">
+          <h3>Add New Todo</h3>
+          <div class="form-group">
+            <label for="todo-title">Title</label>
+            <input type="text" id="todo-title" required>
+          </div>
+          <div class="form-group">
+            <label for="todo-description">Description</label>
+            <textarea id="todo-description"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="todo-due-date">Due Date</label>
+              <input type="date" id="todo-due-date" required>
+            </div>
+            <div class="form-group">
+              <label for="todo-priority">Priority</label>
+              <select id="todo-priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="todo-notes">Notes</label>
+            <textarea id="todo-notes"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="todo-project">Project</label>
+            <select id="todo-project"></select>
+          </div>
+          <div class="form-actions">
+            <button type="button" id="cancel-add-todo" class="btn-cancel">Cancel</button>
+            <button type="submit" class="btn-submit">Add Todo</button>
+          </div>
+        </form>
+      </div>
+      
+      <div id="todos-list" class="todos-list"></div>
+    </main>
+    
+    <div id="todo-details" class="todo-details hidden">
+      <div class="details-content">
+        <div class="details-header">
+          <h2>Todo Details</h2>
+          <button id="close-todo-details" class="close-btn">×</button>
+        </div>
+        
+        <form id="edit-todo-form">
+          <div class="form-group">
+            <label for="edit-title">Title</label>
+            <input type="text" id="edit-title" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-description">Description</label>
+            <textarea id="edit-description"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-due-date">Due Date</label>
+              <input type="date" id="edit-due-date" required>
+            </div>
+            <div class="form-group">
+              <label for="edit-priority">Priority</label>
+              <select id="edit-priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-notes">Notes</label>
+            <textarea id="edit-notes"></textarea>
+          </div>
+          
+          <div class="checklist-section">
+            <h3>Checklist</h3>
+            <div id="checklist-items" class="checklist-items"></div>
+            <div class="add-checklist-item">
+              <input type="text" id="new-checklist-item" placeholder="New checklist item">
+              <button type="button" id="add-checklist-item" class="add-btn">+</button>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" id="cancel-edit" class="btn-cancel">Cancel</button>
+            <button type="submit" class="btn-submit">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>

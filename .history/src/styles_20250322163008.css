@@ -88,9 +88,6 @@ body {
   flex-grow: 1;
 }
 
-.project-separator {
-  margin: 0 8px;
-}
 
 .todo-count {
   width: 40px;
@@ -102,6 +99,8 @@ body {
   width: 20px;
   text-align: center;
 }
+
+
 
 
 .project-item {
