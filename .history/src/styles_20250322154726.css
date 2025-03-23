@@ -1,0 +1,244 @@
+/* Define CSS variables for consistent theming */
+:root {
+  --primary-color: #3498db; /* Blue for primary actions */
+  --secondary-color: #2ecc71; /* Green for submit actions */
+  --background-color: #f4f4f4; /* Light gray background */
+  --text-color: #333; /* Dark text */
+  --sidebar-bg: #ecf0f1; /* Slightly darker gray for sidebar */
+}
+
+/* Reset margins and set base styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin: 0 0 20px;
+}
+
+
+
+.project-item {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-project-btn {
+  
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: auto; /* pushes the button to the right */
+}
+
+
+
+
+/* Projects list without bullets */
+.projects-list {
+  list-style: none;
+  padding: 0;
+}
+
+.delete-project-btn {
+
+}
+
+.projects-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.projects-list li:hover {
+  background-color: #ddd;
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Form group spacing */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-cancel,
+.btn-submit,
+.edit-todo-btn,
+.delete-todo-btn {
+  background-color: #e9e9e9be; /* Light gray background */
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-cancel:hover,
+.btn-submit:hover,
+.edit-todo-btn:hover,
+.delete-todo-btn:hover {
+  background-color: #c9c9c979; /* Darker gray on hover */
+}
+
+
+.todo-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Todo details modal */
+.todo-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Close button for modal */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+/* Checklist items */
+.checklist-items {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist-items li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.checklist-items input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Add checklist item section */
+.add-checklist-item {
+  display: flex;
+  gap: 10px;
+}
+
+.add-checklist-item input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-checklist-item button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hide elements with .hidden class */
+.hidden {
+  display: none;
+}
+
+/* Flex row for due date and priority */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Section header with title and button */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header button {
+  margin-bottom: 20px;
+}
+
+/* Content header for main area */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

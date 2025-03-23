@@ -1,0 +1,105 @@
+/* Define CSS variables for consistent theming */
+:root {
+  --primary-color: #3498db; /* Blue for primary actions */
+  --secondary-color: #2ecc71; /* Green for submit actions */
+  --background-color: #f4f4f4; /* Light gray background */
+  --text-color: #333; /* Dark text */
+  --sidebar-bg: #ecf0f1; /* Slightly darker gray for sidebar */
+}
+
+/* Reset margins and set base styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin: 0 0 20px;
+}
+
+/* Projects list without bullets */
+.projects-list {
+  list-style: none;
+  padding: 0;
+}
+
+.projects-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.projects-list li:hover {
+  background-color: #ddd;
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Form group spacing */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel,
+.btn-submit {
+  background-color: #e9e9e9be; /* Light gray background */
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.btn-cancel:hover,
+.btn-submit:hover {
+  background-color: #e7e7e786;
+}

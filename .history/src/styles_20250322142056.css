@@ -1,0 +1,16 @@
+/* Define CSS variables for consistent theming */
+:root {
+  --primary-color: #3498db; /* Blue for primary actions */
+  --secondary-color: #2ecc71; /* Green for submit actions */
+  --background-color: #f4f4f4; /* Light gray background */
+  --text-color: #333; /* Dark text */
+  --sidebar-bg: #ecf0f1; /* Slightly darker gray for sidebar */
+}
+
+/* Reset margins and set base styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

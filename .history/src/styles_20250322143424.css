@@ -1,0 +1,41 @@
+/* Define CSS variables for consistent theming */
+:root {
+  --primary-color: #3498db; /* Blue for primary actions */
+  --secondary-color: #2ecc71; /* Green for submit actions */
+  --background-color: #f4f4f4; /* Light gray background */
+  --text-color: #333; /* Dark text */
+  --sidebar-bg: #ecf0f1; /* Slightly darker gray for sidebar */
+}
+
+/* Reset margins and set base styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin: 0 0 20px;
+}
+
+.projects-list {
+ list-style : none;
+ padding: 0;
+}
